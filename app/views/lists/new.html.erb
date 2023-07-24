@@ -1,2 +1,13 @@
-<h1>Lists#new</h1>
-<p>Find me in app/views/lists/new.html.erb</p>
+<h1>
+  <strong>New book</strong>
+</h1>
+
+<%= form_with model: @book, url: '/books', do |f| %>
+ <p>Title</p>
+ <%= f.text_field :title %>
+
+ <p>Body</p>
+ <%= f.text_area :body %>
+
+ <%= f.submit '投稿' %>
+<% end %>
