@@ -1,8 +1,20 @@
+<h1>Books</h1>
+<p>Title</p><p>Body</p>
+<% @books.each do |book| %>
+ <p>
+  <span><%= book.title %></span>
+  <span><%= book.body %></span>
+  <p><%= link_to "Show" , "/books/#{book.id}" %></p>
+ </p>
+<% end %>
+
+
+
 <h1>
   <strong>New book</strong>
 </h1>
 
-<%= form_with model: @book, url: '/books', do |f| %>
+<%= form_with model: @book, url: 'books', method: :post do |f| %>
  <p>Title</p>
  <%= f.text_field :title %>
 
