@@ -4,10 +4,10 @@
  <p>
   <span><%= book.title %></span>
   <span><%= book.body %></span>
-  <p><%= link_to "Show" , "/books/#{book.id}" %></p>
+  <p><%= link_to "Show" , list_path(book.id) %></p>
+  <p><%= link_to "Edit" , edit_list_path(book.id) %></p>
  </p>
 <% end %>
-
 
 
 <h1>
