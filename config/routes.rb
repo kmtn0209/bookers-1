@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
- get "/" => 'homes#top'
- get "/books" => 'lists#new'
- post 'books' => 'lists#create'
- get 'books/:id' => 'lists#show', as: 'list'
- get 'books/:id/edit' => 'lists#edit', as: 'edit_list'
-
+ get "/" => 'books#top'
+ get "/books" => 'books#new'
+ post 'books' => 'books#create'
+ get 'books/:id' => 'books#show', as: 'list'
+ get 'books/:id/edit' => 'books#edit', as: 'edit_list'
+ patch 'books/:id' => 'books#update', as: 'update_book'
 end
