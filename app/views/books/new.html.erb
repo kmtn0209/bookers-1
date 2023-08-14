@@ -4,8 +4,9 @@
  <p>
   <span><%= book.title %></span>
   <span><%= book.body %></span>
-  <p><%= link_to "Show" , list_path(book.id) %></p>
-  <p><%= link_to "Edit" , edit_list_path(book.id) %></p>
+  <p><%= link_to "Show" , book_path(book.id) %></p>
+  <p><%= link_to "Edit" , edit_book_path(book.id) %></p>
+  <P><%= link_to "Delete" , destroy_book_path(book.id), method: :delete, "data-confirm" => "are you sure?" %></P>
  </p>
 <% end %>
 
@@ -13,6 +14,16 @@
 <h1>
   <strong>New book</strong>
 </h1>
+
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 
 <%= form_with model: @book, url: 'books', method: :post do |f| %>
  <p>Title</p>
