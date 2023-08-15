@@ -1,5 +1,25 @@
 h1{
   display: block;
-  
-  text-align:center;
+  width:914px;
+  height:18px;
+}
+
+.box{
+  display:block;
+  margin:33px;
+}
+
+.text1{
+  display: block;
+  margin:33px;
+}
+.text2{
+  display: block;
+  margin:33px;
+}
+
+
+.link{
+  display: block;
+  margin:33px;
 }
